@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#define KEYLIME_REG 5
+#define KEYLIME_REG_C 5
 
 typedef enum
 {
@@ -18,7 +18,7 @@ typedef struct
         KeyLimeType type;
 } KeyLimeRegister;
 
-char chAdd(char a, char b);
+KeyLimeType getRegType(int index);
 
 
 

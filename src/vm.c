@@ -1,6 +1,8 @@
 #include "vm.h"
 
-char chAdd(char a, char b)
+static KeyLimeRegister REGISTERS[KEYLIME_REG_C];
+
+KeyLimeType getRegType(int index)
 {
-        return a + b;
+        return REGISTERS[index].type;
 }
