@@ -41,3 +41,13 @@ void KeyLime_newStr(int index, const char* string)
         char* writer = REGISTERS[index % KEYLIME_REG_C].item;
         while((*writer++ = *string++)) ;
 }
+
+void KeyLime_swap(int index1, int index2)
+{
+        KeyLimeType typeTemp = REG_GET(index1).type;
+        void* itemTemp = REG_GET(index1).item;
+        REG_GET(index1).type = REG_GET(index2).type;
+        REG_GET(index1).item = REG_GET(index2).item;
+        REG_GET(index2).type = typeTemp;
+        REG_GET(index2).item = itemTemp;
+}

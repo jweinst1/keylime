@@ -5,6 +5,8 @@
 #include <string.h>
 
 #define KEYLIME_REG_C 5
+// Macro to
+#define REG_GET(ind) REGISTERS[ind % KEYLIME_REG_C]
 
 typedef enum
 {
@@ -35,6 +37,9 @@ void KeyLime_newBool(int index, int state);
 
 //creates a new string in some register.
 void KeyLime_newStr(int index, const char* string);
+
+// swaps two register values
+void KeyLime_swap(int index1, int index2);
 
 
 
