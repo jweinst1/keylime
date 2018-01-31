@@ -7,6 +7,7 @@
 
 typedef enum
 {
+        KeyLimeType_Null,
         KeyLimeType_Int,
         KeyLimeType_Bool,
         KeyLimeType_Str
@@ -18,7 +19,15 @@ typedef struct
         KeyLimeType type;
 } KeyLimeRegister;
 
-KeyLimeType getRegType(int index);
+KeyLimeType KeyLime_getRegType(int index);
+
+void KeyLime_setReg(int index, void* ptr);
+
+// Gets void pointer of register.
+void* KeyLime_getReg(int index);
+
+// Creates a new int in some register, frees old value.
+void KeyLime_newInt(int index, int value);
 
 
 
