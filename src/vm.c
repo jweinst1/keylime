@@ -32,3 +32,12 @@ void KeyLime_newBool(int index, int state)
         REGISTERS[index % KEYLIME_REG_C].item = malloc(sizeof(int));
         *(int*)(REGISTERS[index % KEYLIME_REG_C].item) = state % 2;
 }
+
+void KeyLime_newStr(int index, const char* string)
+{
+        free(REGISTERS[index % KEYLIME_REG_C].item);
+        REGISTERS[index % KEYLIME_REG_C].type = KeyLimeType_Str;
+        REGISTERS[index % KEYLIME_REG_C].item = malloc(strlen(string) + 1);
+        char* writer = REGISTERS[index % KEYLIME_REG_C].item;
+        while((*writer++ = *string++)) ;
+}
