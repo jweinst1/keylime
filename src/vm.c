@@ -24,3 +24,11 @@ void KeyLime_newInt(int index, int value)
         REGISTERS[index % KEYLIME_REG_C].item = malloc(sizeof(int));
         *(int*)(REGISTERS[index % KEYLIME_REG_C].item) = value;
 }
+
+void KeyLime_newBool(int index, int state)
+{
+        free(REGISTERS[index % KEYLIME_REG_C].item);
+        REGISTERS[index % KEYLIME_REG_C].type = KeyLimeType_Bool;
+        REGISTERS[index % KEYLIME_REG_C].item = malloc(sizeof(int));
+        *(int*)(REGISTERS[index % KEYLIME_REG_C].item) = state % 2;
+}

@@ -29,6 +29,8 @@ void* KeyLime_getReg(int index);
 // Creates a new int in some register, frees old value.
 void KeyLime_newInt(int index, int value);
 
+void KeyLime_newBool(int index, int state);
+
 
 
 
